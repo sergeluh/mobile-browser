@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="toolbarBackground">#fafafa</color>
     <color name="darkText">#333</color>
+    <color name="greyLine">#e9e9ea</color>
 </resources>

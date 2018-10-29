@@ -9,12 +9,16 @@ import mobile.browser.com.mobilebrowser.utils.SingleToast
 
 abstract class BaseActivity: AppCompatActivity(){
 
+    private var currentFragment: BaseFragment? = null
+
     protected fun replaceFragment(fragment: BaseFragment, tag: String){
+        currentFragment = fragment
         supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment, tag).commit()
     }
 
     protected fun addFragment(fragment: BaseFragment, tag: String){
+        currentFragment = fragment
         supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment, tag)
                 .addToBackStack("my_stack")
@@ -32,5 +36,13 @@ abstract class BaseActivity: AppCompatActivity(){
     fun hideKeyboard(){
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+    }
+
+    override fun onBackPressed() {
+        currentFragment?.onBackPressed()?.also {
+            if (it){
+                super.onBackPressed()
+            }
+        }
     }
 }

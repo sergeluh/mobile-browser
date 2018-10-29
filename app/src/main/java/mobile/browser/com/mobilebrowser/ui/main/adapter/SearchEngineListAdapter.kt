@@ -19,7 +19,7 @@ class SearchEngineListAdapter(context: Context, @LayoutRes private val engineLis
             view = LayoutInflater.from(parent?.context).inflate(R.layout.search_list_item, parent, false)
         }
         val image = view?.findViewById<ImageView>(R.id.search_icon)
-//        view?.findViewById<ImageView>(R.id.dropdown_arrow)?.visibility = View.VISIBLE
+        view?.findViewById<ImageView>(R.id.dropdown_arrow)?.visibility = View.VISIBLE
         image?.setImageResource(engineList[position].icon)
         return view
     }

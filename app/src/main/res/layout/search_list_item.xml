@@ -4,23 +4,27 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
-    android:padding="4dp">
+    android:padding="6dp">
 
     <ImageView
         android:id="@+id/search_icon"
-        android:layout_width="24dp"
-        android:layout_height="24dp" />
+        android:layout_width="18dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <!--<ImageView-->
-        <!--android:id="@+id/dropdown_arrow"-->
-        <!--android:layout_width="16dp"-->
-        <!--android:layout_height="16dp"-->
-        <!--android:scaleType="centerCrop"-->
-        <!--android:src="@drawable/dropdown_arrow"-->
-        <!--android:visibility="gone"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintStart_toEndOf="@id/search_icon"/>-->
+    <ImageView
+        android:id="@+id/dropdown_arrow"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dropdown_arrow"
+        android:visibility="gone"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_icon"/>
 
     <TextView
         android:id="@+id/blank_text"

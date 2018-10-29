@@ -52,6 +52,10 @@ open class BaseFragment: Fragment(){
         baseActivity?.showToast(message)
     }
 
+    open fun onBackPressed():Boolean{
+        return true
+    }
+
     class ViewLifeCycleOwner: LifecycleOwner{
 
         private val lifecycleRegistry = LifecycleRegistry(this)

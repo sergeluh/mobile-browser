@@ -20,8 +20,6 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar_container.requestFocus()
-
         val engineList = mutableListOf(SearchEngine(R.drawable.icon_google, "https://google.com/search?q="),
                 SearchEngine(R.drawable.icon_bing, "http://bing.com/search?q="),
                 SearchEngine(R.drawable.icon_yahoo, "https://search.yahoo.com/search?p="),
@@ -32,6 +30,7 @@ class MainActivity : BaseActivity() {
 
         viewModel.goToMainFragment.observe(this, Observer {
             replaceFragment(MainFragment.newInstance(), MainFragment.TAG)
+            hideKeyboard()
         })
 
         viewModel.goToWebViewFragment.observe(this, Observer {
@@ -49,6 +48,8 @@ class MainActivity : BaseActivity() {
                 hideKeyboard()
             }
         }
+
+        toolbar_container.requestFocus()
 
         search_view.setOnEditorActionListener { _, _, _ ->
             val query = search_view.text.toString().trim()

@@ -32,7 +32,7 @@ class MainFragment : BaseFragment() {
                 SpeedDialItem(R.drawable.ic_home, "youtube.com"),
                 SpeedDialItem(R.drawable.ic_home, "apple.com"),
                 SpeedDialItem(R.drawable.ic_home, "facebook.com"),
-                SpeedDialItem(R.drawable.ic_menu, "bing.com"),
+                SpeedDialItem(R.drawable.ic_menu, "developer.android.com"),
                 SpeedDialItem(R.drawable.ic_rectangle, "twitter.com"),
                 SpeedDialItem(R.drawable.ic_refresh, "wikipedia.org"))
 
